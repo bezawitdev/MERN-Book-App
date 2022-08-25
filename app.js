@@ -1,6 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const logger = require('morgan');
+const router = require("./routes/book-routes")
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
+app.use(cors());
+
+app.use("/books", router)
+
+
 
 mongoose.connect(
     "mongodb+srv://admin:perscholas16@cluster0.uoephg3.mongodb.net/?retryWrites=true&w=majority"
