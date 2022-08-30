@@ -19,7 +19,7 @@ const Nav = () => {
     <NavLink to="/books" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Books</NavLink>
 
        <NavLink to="/add-book" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Add-Book</NavLink>
-       <NavLink to="/NewyorkSeller" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Best-Seller</NavLink>
+       <NavLink to="/NewyorkSeller" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">NY-Best-Seller</NavLink>
     
     </div>
     </nav>

@@ -25,6 +25,7 @@ function App() {
         {/* <Route path='/books/:id' element={<BookDescription />} /> */}
         <Route path='/books/:id/desc' element={<BookDescription />} />
         <Route path='/NewyorkSeller' element={<NewyorkSeller />} />
+        <Route path='/NewyorkSeller/:id/more' element={<BookDescription />} />
         
 
 

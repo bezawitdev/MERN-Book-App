@@ -11,6 +11,7 @@ function BookDescription() {
   const [book, setBook] = useState([])
   // const [deleted, setDeleted] = useState(false)
   const { id } = useParams();
+  const history = useNavigate()
   let navigate = useNavigate();
 
   
