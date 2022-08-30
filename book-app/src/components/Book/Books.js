@@ -50,14 +50,15 @@ const Books = () => {
   console.log(books, 'setbooks')
 // console.log(books)
   return (
-    <div className="bg-red">
+    <div>
       <Layout/>
+      <div class="bg-slate-50 flex flex-wrap">
         {books && books.map((book) => (
           <div>
             <Book book={book}/>
           </div>
         ))}
-     
+     </div>
     </div>
   )
 }
