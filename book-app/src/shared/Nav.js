@@ -2,29 +2,56 @@ import { NavLink } from "react-router-dom";
 import logo from './logoFinal.PNG';
 
 
-const Nav = () => {
-  return(
-  <nav class="flex flex-wrap bg-green-900 p-6"> 
-  <div class="items-start justify-start mr-1.5"> 
-   <div class="flex"> 
-    <img src={logo} class="max-w-full h-auto rounded-full" width="74" height="54" alt=""/>
-    <h3 class="items-bottom text-yellow-600 text-2xl ml-9 mt-4  font-medium">Magic Book Store</h3>
-  </div> 
-  {/* <img src={logo} class="fill-current h-8 w-8 mr-60" width="54" height="54" /> */}
-      {/* <svg className="fill-current h-8 w-8 mr-60" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg> */}
-      </div>
-    {/* <span className="font-semibold text-xl tracking-tight">Tailwind CSS</span>    */}
-    <div className="items-end justify-between pl-96 mt-6 text-lg">
-    <NavLink to="/" className="block mt-2 lg:inline-block lg:mt-0 text-md uppercase text-yellow-600  font-medium  hover:text-white mr-8">Home</NavLink>
-    <NavLink to="/books" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Books</NavLink>
+const Nav = ({ flex }) => {
+ 
+    const [navbarOpen, setNavbarOpen] = React.useState(false);
+    return (
+      <>
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-green-900 mb-3">
+          <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <img src={logo} class="max-w-full h-auto rounded-full" width="74" height="54" alt=""/>
+              <a
+                className="text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-yellow-600"
+                href="#pablo"
+              >
+               Magic Book Store
+              </a>
+              <button
+                className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                type="button"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+              >
+                {/* <i className="fas fa-bars"></i> */}
+              </button>
+            </div>
+            <div
+              className={
+                "lg:flex flex-grow items-center" +
+                (navbarOpen ? " flex" : " hidden")
+              }
+              id="example-navbar-danger"
+            >
+              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                <li className="nav-item">
+                <NavLink to="/" className="block mt-2 lg:inline-block lg:mt-0 text-md uppercase text-yellow-600  font-medium  hover:text-white mr-8">Home</NavLink>
+                </li>
+                <li className="nav-item">
+                <NavLink to="/books" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Books</NavLink>
+                </li>
+                <li className="nav-item">
+                <NavLink to="/add-book" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Add-Book</NavLink>
+                <li className="nav-item">
+                <NavLink to="/NewyorkSeller" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">NY-Best-Seller</NavLink>
+                </li>
+                
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </>
+    );
+  }
 
-       <NavLink to="/add-book" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">Add-Book</NavLink>
-       <NavLink to="/NewyorkSeller" className="block mt-2 lg:inline-block lg:mt-0 text-yellow-600 text-md uppercase  font-medium hover:text-white mr-8">NY-Best-Seller</NavLink>
-    
-    </div>
-    </nav>
-  )
-}
-
-export default Nav
-{/* <div className="flex items-end justify-end flex-wrap bg-red-900 p-6"> */}
+  export default Nav
