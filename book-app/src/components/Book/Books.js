@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Book from './Book';
+import apiUrl from '../../apiConfig';
 import Layout from '../../shared/Layout';
 const URL = "http://localhost:5000/books";
 
@@ -15,8 +16,8 @@ const URL = "http://localhost:5000/books";
 
 // }
 const fetchHandler = async () => {
-   
-  return await axios.get(URL).then((res) => res.data)
+  return await axios.get(`${apiUrl}/books`).then((res) => res.data)
+  // return await axios.get(URL).then((res) => res.data)
       
     // console.log(response.data, 'setbooks')
  }

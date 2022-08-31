@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons' ;
 import BookDescription from '../BookDescription';
+import apiUrl from '../../apiConfig';
 
 function Book(props) {
   const [deleted, setDeleted] = useState(false)
@@ -13,9 +14,12 @@ function Book(props) {
 // const deleteHandler = () => {
 //   axios.delete(`http://localhost:5000/books/${_id}`).then(res=>res.data).then(()=>history("/books"))
 // }
+
+// const response = await axios(${apiUrl}/blogs/${id})
 const deleteHandler = async()=>{
       await axios
-        .delete(`http://localhost:5000/books/${_id}`)
+      .delete(`${apiUrl}/books/${_id}`)
+        // .delete(`http://localhost:5000/books/${_id}`)
         .then((res) => res.data)
         .then(()=>history("/"))
         .then(()=> history("/books"))

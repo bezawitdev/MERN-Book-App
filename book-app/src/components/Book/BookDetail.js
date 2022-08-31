@@ -5,6 +5,7 @@ import {useState} from 'react';
 import Layout from '../../shared/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faTrashCan } from '@fortawesome/free-solid-svg-icons' ;
+import apiUrl from '../../apiConfig';
 
 function BookDetail() {
     const [inputs, setInputs] = useState({})
@@ -14,13 +15,16 @@ function BookDetail() {
     console.log(id)
     useEffect(() => {
         const fetchHandler = async() => {
-            await axios.get(`http://localhost:5000/books/${id}`).then(res => res.data).then(data => setInputs(data.book))
+          await axios.get(`${apiUrl}/books/${id}`).then(res => res.data).then(data => setInputs(data.book))
+            // await axios.get(`http://localhost:5000/books/${id}`).then(res => res.data).then(data => setInputs(data.book))
         }
         fetchHandler()
     },[id])
 
     const sendRequest = async() => {
-        await axios.put(`http://localhost:5000/books/${id}`, {
+      
+      await axios.put(`${apiUrl}/books/${id}`, {
+        // await axios.put(`http://localhost:5000/books/${id}`, {
             name:String(inputs.name),
       author: String(inputs.author),
       description:String(inputs.description),

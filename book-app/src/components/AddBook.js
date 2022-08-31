@@ -3,6 +3,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import Layout from '../shared/Layout';
 import {useNavigate} from 'react-router-dom';
+import apiUrl from '../apiConfig';
 
 
 function AddBook() {
@@ -24,7 +25,10 @@ function AddBook() {
   }
 
   const sendRequest = async() => {
-    axios.post("http://localhost:5000/books", {
+   
+    axios.post(`${apiUrl}/books`, {
+
+    // axios.post("http://localhost:5000/books", {
       name:String(inputs.name),
       author: String(inputs.author),
       description:String(inputs.description),
@@ -156,6 +160,84 @@ function AddBook() {
     <button type="submit" class="
       px-6
       py-2.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       bg-green-900
       text-yellow-600
       font-medium

@@ -26,7 +26,7 @@ const history = useNavigate()
     const response = await  axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${API}`);
         console.log("alldata", response)
     const  data= response.data.results.books ;
-console.log("random", data)
+
     setSeller(data);
 
 

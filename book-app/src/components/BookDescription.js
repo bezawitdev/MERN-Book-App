@@ -3,6 +3,7 @@ import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Layout from '../shared/Layout';
 import Books from './Book/Books';
+import apiUrl from '../apiConfig';
 
 import Book from './Book/Book';
 
@@ -19,9 +20,9 @@ function BookDescription() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios(`http://localhost:5000/books/${id}`)
-
-        // const response = await axios(`${apiUrl}/blogs/${id}`)
+        // const response = await axios(`http://localhost:5000/books/${id}`)
+        const response = await axios(`${apiUrl}/books/${id}`)
+        
         console.log(response)
         const result = response.data.book
         setBook(result)
